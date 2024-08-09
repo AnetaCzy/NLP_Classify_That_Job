@@ -15,7 +15,9 @@ Manually coded data collected by the Institute for Educational Research in Warsa
 
 ## Methods
 Language: Python (numpy, pandas, regex, nltk.corpus, matplotlib.pyplot, seaborn, sklearn)
+
 Techniques: Pipelines, CountVectorizer, Tf-idf Transformer
+
 Algorithms:
   1) Naive Bayes Classifier
   2) Support Vector Machine (SVM) with Stochastic Gradient Descent (SGD)
