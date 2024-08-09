@@ -44,5 +44,24 @@ For CBOP data:
 
 The best result was also obtained using logistic regression with a weighted average f-1 score of 74%.
 The best-predicted classes were 2, 5, and 9, with the worst being class 3.
+
 ![image](https://github.com/user-attachments/assets/e6ef8654-c239-40be-9ace-1d38da47734a)
+
+## Thesis summary
+The aim of this thesis was to find the best model for the classification of occupations and to match job descriptions with the right job categories based on KZiS standards kept by the Central Statistical Office (pl. GUS). It will contribute to the continuation of work towards the automation of the classification of occupations for the purposes of statistics, and the data obtained from its results can be analyzed in terms of adjusting the labor market to the economic development of the country.
+
+The study was conducted on data from Central Job Offers Database (CBOP) and different web pages with jobs postings collected by Institute for Educational Research. Before creating and training our models, the input data was thoroughly cleaned to minimize possible interference and optimize the accuracy of the result.
+We analyzed three algorithms that works well with natural language processing and are commonly used for text classification: Naive Bayes, Support-Vector Machine with Stochastic Gradient Descent (SGD) and Logistic Regression. 
+
+After successfully running our models on the first dataset, we decided to run a~test on new data. We got a sample of 10,062 manually labelled job offers and load them to our pre-trained model. It got us roughly 1,43% to predict out of 703887 trained sample. We performed the same data cleaning process as before and compared results.
+
+The best fit was achieved by using a logistic regression model with overall weighted average f1-score of 74%. Following up with 68% of SVM weighted average f1-score and the least fitted model of Naive Bayes (58%). We can also see that in all three models the best predicted classes are no. 2 (Specialists), no. 7 (Industrial
+workers and Craftsmen) and no. 5 (Service and Sales workers). These were the classes with the highest number of samples in dataset and highest percentage representation of ratio of the test class to the trained class. The least predicted classes were class no. 1 (that weren't even included in Naive Bayes model) and class no.3, both commonly mistakenly fitted in the first category.
+
+The conclusions that can be drawn from our observations are that, although working with unbalanced data can give relatively good outcome, we have to be careful while interpreting it, because of the possible bias. Also, a bigger training sample of one of the classes usually positively influences the result for this class, but also decreases the accuracy of prediction for other classes. 
+
+## Possible Future Improvements
+For further investigation regarding the improvement of the model's accuracy, there are few topics yet to be considered. First of all, text stemming and lemmatization during the data cleaning process. There are yet not many algorithms developed to handle these tasks in the Polish language, which is very complex from a grammatical point of view and it is also highly inflectional. Stemming is the truncation of all kinds of prefixes and suffixes to get to the unchanging "core" representing the word. The root itself does not necessarily have to be the correct word, which may also lead to anomalies while analyzing text, while lemmatization is reducing a word to its basic form. The most famous algorithm used for lemmatization in polish is Morfeusz, but it does not always correspond correctly to a~given problem with the word.
+
+Another topic to think about would be a mechanism to select characteristic features, based on which the classifier could be taught. A good step toward improving our model could be also adding word filtering. That is to select subsets of words that appear in certain classes. The usual filtering mechanism is used to remove redundant information (so-called noise). Such words for the classifier do not carry any useful knowledge and may reduce the accuracy of the classification, as well as increase the time of the classification process itself. The easiest approach to this problem would be adding those words to created stop-words list and remove them from jobs descriptions. As a high impact on results had the distribution of samples in given classes, there are some methods to work with, that could eliminate this problem. For instance, to overcome an imbalanced dataset, there is a bootstrap method that iteratively resamples a~dataset with replacements or different Synthetic Minority Oversampling Techniques, known as SMOTE, to balance our data. 
 
