@@ -6,11 +6,14 @@ The main objective of this study was to develop a classifier that automatically 
 
 ## Research Objectives
   C1: Identify which algorithm among those studied provides the most accurate classification.
+  
   C2: Prepare a training and test set containing input data in the form of occupation descriptions and their associated 6-digit codes.
+  
   C3: Train a model based on new data to verify the assumptions derived from the test models.
 
 ## Data Sources
 Central Job Offers Database (CBOP - Centralna Baza Ofert Pracy)
+
 Manually coded data collected by the Institute for Educational Research in Warsaw (IBE - Instytut Badań Edukacyjnych w Warszawie)
 
 ## Methods
